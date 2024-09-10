@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(image/background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color:#464646;
+  font-family:"Trebuchet MS";
+}
+
+.topnav {
+            background-color: rgb(74, 74, 74);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .topnav {
+            background-color: rgb(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            justify-content: center; /* Center the navigation items horizontally */
+            padding: 13px;
+       }
+
+        .topnav a {
+    /* float: left; Remove this line */
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+       }
+        .topnav a:hover {
+            background-color: #ddd;
+            opacity: 1;
+            transition: all 0.6s ease-out;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: white;
+            color: rgb(203, 125, 0);
+        }
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: rgba(254, 170, 44, 0.857);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 2.8),
+    inset 0 0 20px rgba(255, 255, 255, 0.7),
+    inset 0 0 30px rgba(255, 255, 255, 0.5),
+    inset 0 0 40px rgba(255, 255, 255, 0.3);
+  border-top-width: 15px;
+  border-top-style: solid;
+  border-top-color: #342311;
+
+  border-left-width: 15px;
+  border-left-style: solid;
+  border-left-color: #342311;
+  border-radius: 15px;
+
+  border-right-width: 15px;
+  border-right-style: solid;
+  border-right-color: #212121;
+  border-radius: 5px;
+
+  border-bottom-width: 15px;
+  border-bottom-style: solid;
+  border-bottom-color: #212121;
+  border-radius: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: center; /* Center align all form elements */
+}
+
+select, input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%; /* Make inputs and select full width by default */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+.smaller-input {
+  width: 50%; /* Set the width to 50% for smaller inputs */
+}
+
+input[type="submit"] {
+  background-color: #AFA29D;
+  color: #fff;
+  cursor: pointer;
+  width: 50%; /* Set the width to 50% */
+  margin: 0 auto; /* Center the submit button horizontally */
+}
+
+input[type="submit"]:hover {
+  background-color: #C36201;
+  opacity: 1;
+  -moz-transition: all 0.6s ease-out;
+  -o-transition: all 0.6s ease-out;
+  -webkit-transition: all 0.6s ease-out;
+  -ms-transition: all 0.6s ease-out;
+  transition: all 0.6s ease-out;
+}
+
+.logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      max-width: 20%;
+      height: auto;
+      border-radius: 50%;
+    }
+
+h1{
+  text-align: center;
+  text-decoration-color: white;
+  margin-left: 60px;
+  margin-right: 50px;
+}
+
+.footer {
+          position: bottom;
+          bottom: 0;
+          width: 100%;
+          background-color: rgb(0, 0, 0, 0.3);
+          color: rgb(255, 253, 253);
+          text-align: center;
+          padding: 0.1px;
+    }
+
+
+  </style>
+  <title>Order Now</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topnav">
+    <a href="homepage.html">HOME</a>
+    <a class="active" href="orderingpage.html">ORDER NOW</a>
+    <a href="index2.php">ABOUT US</a>
+    <a href="index3.php">MISSION & VISION</a>
+  </div>
+  <div class="container">
+    <div class="logo">
+      <img src="C:\xampp\htdocs\Burger-Ordering-System\image\logo.jpg" alt="Burger Hunter Logo">
+    </div>
+    <h1>Ordering System</h1>
+    <form action="order.php" method="post">
+      <label for="burger-type">Select Burger Type:</label>
+      <select name="burger-type" id="burger-type" required>
+        <option value="classic">Hunter's Jr Burger 49PHP</option>
+        <option value="veggie">Hunter's Quarter Pounder Burger 79PHP</option>
+        <option value="cheese">Hunter's Double Decker Burger 129PHP</option>
+        <option value="cheese">Hunter's Ultimate Supreme Burger 159PHP</option>
+      </select>
+
+      <label for="toppings">Select Add-ons Toppings (Hold Ctrl key to select multiple):</label>
+      <select name="toppings[]" id="toppings" multiple required>
+        <option value="bacoon">Bacoon 20PHP</option>
+        <option value="ham">Ham 20PHP</option>
+        <option value="mushroom">Mushroom 20PHP</option>
+      </select>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" name="quantity" id="quantity" min="1" required>
+
+      <input type="submit" value="Place Order">
+    </form>
+  </div>
+  <div class="footer">
+    <p>&copy; 2023-2024 Burger Hunter Website. All rights reserved. Contact Us # 09053313869 / Email: burger_hunter.delicious@email.com</p>
+  </div>
+</body>
+</html>
